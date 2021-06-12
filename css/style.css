@@ -1,0 +1,29 @@
+circle {
+    fill: #ddd;
+    stroke-width: 50;
+    stroke-dasharray: 0 158;
+    transform-origin: center;
+    transition: stroke-dasharray 3s ease;
+}
+
+svg {
+    margin: 0 auto;
+    transform: rotate(-90deg);
+    background: #ddd;
+    border-radius: 50%;
+    display: block;
+}
+
+.slice:hover {
+    opacity: .25;
+}
+
+
+.tooltip {
+    position: absolute;
+    background: rgb(16, 16, 54);
+    padding: 2px 5px;
+    color: white;
+    z-index: 99;
+    opacity: 0;
+}
