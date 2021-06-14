@@ -41,7 +41,7 @@ export default class Slice {
         slice.style.fill = "transparent";
         slice.style.transform = `rotate(${-90 + this.start}deg)`;
         slice.onmousemove = e => {
-            let tooltip = document.querySelector('.tooltip');
+            let tooltip = document.querySelector('.--svgchart-tooltip');
             tooltip.style.top = e.clientY + "px";
             tooltip.style.left = (e.clientX - tooltip.offsetWidth / 2) + "px";
             tooltip.innerText = `${this.label} : ${this.value}`;

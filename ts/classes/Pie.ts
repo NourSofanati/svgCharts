@@ -68,11 +68,11 @@ export default class Pie implements IDrawable {
         newBase.style.width = "250px";
         newBase.style.height = "250px";
         newBase.onmouseenter = () => {
-            let tooltip: HTMLElement = <HTMLElement>document.querySelector('.tooltip');
+            let tooltip: HTMLElement = <HTMLElement>document.querySelector('.--svgchart-tooltip');
             tooltip.style.opacity = "1";
         }
         newBase.onmouseleave = () => {
-            let tooltip: HTMLElement = <HTMLElement>document.querySelector('.tooltip');
+            let tooltip: HTMLElement = <HTMLElement>document.querySelector('.--svgchart-tooltip');
             tooltip.style.opacity = "0";
         }
         this.SetCircumference(25);
