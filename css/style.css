@@ -1,25 +1,16 @@
-circle {
-    fill: #ddd;
+.--svgchart-circle {
+    display: inline-block;
     stroke-width: 50;
     stroke-dasharray: 0 158;
     transform-origin: center;
-    transition: stroke-dasharray 3s ease;
+    transition: stroke-dasharray 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-svg {
-    margin: 0 auto;
-    transform: rotate(-90deg);
-    background: #ddd;
-    border-radius: 50%;
-    display: block;
+.--svgchart-slice:hover {
+    opacity: .55;
 }
 
-.slice:hover {
-    opacity: .25;
-}
-
-
-.tooltip {
+.--svgchart-tooltip {
     position: absolute;
     background: rgb(16, 16, 54);
     padding: 2px 5px;

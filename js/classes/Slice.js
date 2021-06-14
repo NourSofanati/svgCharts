@@ -28,24 +28,27 @@ export default class Slice {
         return (toBeHashed * 3);
     }
     draw() {
-        this.color = `hsl(${this.hashLabel(this.label)},75%,65%)`;
+        this.color = `hsl(${this.hashLabel(this.label)},95%,65%)`;
         this.calcPercentage(this.parentPie.total);
         let slice = document.createElementNS("http://www.w3.org/2000/svg", "circle");
         slice.setAttribute("r", "25");
         slice.setAttribute("cx", "50");
         slice.setAttribute("cy", "50");
         let strokeDash = (((this.percent * 100) * this.parentPie.circumference) / 100);
-        slice.style.strokeDasharray = `${strokeDash} ${this.parentPie.circumference}`;
+        slice.classList.add("--svgchart-slice");
+        slice.classList.add("--svgchart-circle");
         slice.style.stroke = this.color;
         slice.style.fill = "transparent";
-        slice.style.transform = `rotate(${this.start}deg)`;
-        slice.classList.add("slice");
+        slice.style.transform = `rotate(${-90 + this.start}deg)`;
         slice.onmousemove = e => {
             let tooltip = document.querySelector('.tooltip');
             tooltip.style.top = e.clientY + "px";
             tooltip.style.left = (e.clientX - tooltip.offsetWidth / 2) + "px";
             tooltip.innerText = `${this.label} : ${this.value}`;
         };
+        setTimeout(() => {
+            slice.style.strokeDasharray = `${strokeDash} ${this.parentPie.circumference}`;
+        }, 50);
         return slice;
     }
 }

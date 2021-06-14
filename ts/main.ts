@@ -10,5 +10,4 @@ function drawChart(div: HTMLDivElement) {
     pie.AddSlice(500, "كهرباء")
     pie.AddSlice(500, "ماء")
     pie.AddSlice(2500, "انترنت")
-    pie.AddSlice(55000, "طعام")
 }

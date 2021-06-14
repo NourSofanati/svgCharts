@@ -45,7 +45,26 @@ export default class Pie implements IDrawable {
         const container = document.getElementById(containerName)!;
         container.innerHTML = ``;
         let newBase: SVGElement = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        let overlay = document.createElement('div');
+        overlay.setAttribute("style", `
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+        z-index: 2;
+        border-radius: 50%;
+        opacity: .5;
+        background: radial-gradient(transparent, rgba(0, 0, 0, 0.9));
+        pointer-events: none;`);
+        container.appendChild(overlay);
+        container.style.width = "250px";
+        container.style.height = "250px";
+        container.style.position = "relative";
         newBase.setAttribute("viewBox", "0 0 100 100");
+        newBase.classList.add("--svgchart-circle");
+        newBase.style.position = "relative";
         newBase.style.width = "250px";
         newBase.style.height = "250px";
         newBase.onmouseenter = () => {
